@@ -30,4 +30,13 @@ body{
   bottom: 0px;
   width: 100%;
 }
+.fade-enter-active,
+.fade-leave-active {
+  transition: all .2s ease;
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0.2;
+}
 </style>

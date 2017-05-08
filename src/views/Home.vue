@@ -2,7 +2,7 @@
 	<el-row class="container">
 		<el-col :span="24" class="header">
 			<el-col :span="10" class="logo" :class="collapsed?'logo-collapse-width':'logo-width'">
-  			{{collapsed?'':logoName}}
+  			{{collapsed?shortName:logoName}}
 			</el-col>
 			<!-- 折叠导航栏 -->
 			<el-col :span="10">
@@ -81,7 +81,8 @@ export default {
 	name: "home",
 	data() {
 		return {
-			logoName:'Smart supply manager',
+			logoName:'Smart Supply Manager',
+      shortName: 'SSM',
 			collapsed:false,
 			userName: '',
 			userPic: ''
@@ -201,9 +202,6 @@ aside {
   flex:1;
   overflow-y: scroll;
   padding: 20px;
-}
-.breadcrumb-container {
-  //margin-bottom: 15px;
 }
 .title {
   width: 200px;
