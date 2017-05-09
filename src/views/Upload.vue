@@ -24,9 +24,14 @@
     <el-col :span="8">
       <el-upload
         class="upload-demo"
-        action="">
+        action="http://9.197.93.207/components/"
+        :on-preview="handlePreview"
+        :on-remove="handleRemove"
+        :file-list="fileList"
+        :on-success="uploadSuccess"
+        :on-error="uploadFail">
         <el-button size="normal" type="primary">点击上传</el-button>
-        <span slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</span>
+        <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
       </el-upload>
     </el-col>
   </el-col>
@@ -49,11 +54,30 @@ export default {
           label: 'brand3'
         }],
         value: '',
-        datevalue: ''
+        datevalue: '',
+        fileList: []
       }
     },
   methods: {
-
+    handleRemove(file, fileList) {
+      console.log(file, fileList);
+    },
+    handlePreview(file) {
+      console.log(file);
+    },
+    uploadSuccess(response,file,fileList) {
+      this.$notify({
+          title: 'Success',
+          message: 'Uploaded data into DB!',
+          type: 'success'
+        });
+    },
+    uploadFail(err,file,fileList) {
+      this.$notify.error({
+          title: 'Fail',
+          message: 'Fail to upload data!'
+        });
+    }
   }
 }
 </script>

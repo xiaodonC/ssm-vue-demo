@@ -20,10 +20,10 @@ export default new Router({
       iconCls: 'el-icon-upload',//图标样式class
       children: [
           { path: '/upload_forecast', component:Upload, name: 'Forecast' },
-          { path: '/upload_sit',  name: 'Stock in Transit' },
-          { path: '/upload_commit',  name: 'Commit' },
-          { path: '/upload_po',  name: 'PO' },
-          { path: '/upload_shipment',  name: 'Shipment' },
+          { path: '/upload_sit', component:Upload, name: 'Stock in Transit' },
+          { path: '/upload_commit', component:Upload, name: 'Commit' },
+          { path: '/upload_po', component:Upload, name: 'PO' },
+          { path: '/upload_shipment', component:Upload, name: 'Shipment' },
       ]
     },
     {
