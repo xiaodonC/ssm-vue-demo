@@ -1,7 +1,7 @@
 <template>
 <el-col class="wrapper" :span="24">
   <el-col class="uploadSelect" :span="24">
-    <el-col :span="8">
+    <!-- <el-col :span="8">
       <span class="demonstration">Please select brand:</span>
       <el-select v-model="value" clearable placeholder="select brand">
           <el-option
@@ -20,7 +20,7 @@
         format="yyyy-WW-week"
         placeholder="select date">
       </el-date-picker>
-    </el-col>
+    </el-col> -->
     <el-col :span="8">
       <el-upload
         class="upload-demo"
